@@ -1,0 +1,18 @@
+
+<h1 class="mt-4">Dashboard</h1>
+<div class="row">
+    <div class="col-6">
+        <p class="lead mb-3">Welcome <%= user.name %> </p>
+       <h1 <% if (user.role == 'freelancer'){ %>> done man</h1> <%} else {%> <h1>NO</h1> <%}%>
+    </div>
+    <div class="lead">
+        <form action="/users/activate-frelancer" method="POST">
+            <input type="hidden" name="role" value="freelancer">
+            <button type="submit" class="btn btn-primary">
+                <i class="fas fa-star"></i> Become a Freelancer 
+            </button>
+        </form>
+        
+    </div>
+</div>
+<a href="/users/logout" class="btn btn-secondary">Logout</a>

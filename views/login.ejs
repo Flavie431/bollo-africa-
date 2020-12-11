@@ -1,0 +1,38 @@
+<div class="container ">
+  <br><br><br>
+
+    <div class="col-6 m-auto form-signin">
+      <div class="">
+        <h1 class="text-center mb-3 form-signin-heading"><i class="fas fa-sign-in-alt"></i>  Login</h1>
+        <% include ('./partials/messages') %>
+        <form action="/users/login" method="POST" >
+          <br>
+          <br>
+          <div class="form-group">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="input-block-level"
+              placeholder="Enter Email"
+            />
+          </div>
+          <br>
+          <div class="form-group">
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="input-block-level"
+              placeholder="Enter Password"
+            />
+            <br>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Login</button>
+        </form>
+        <p class="lead mt-4">
+          No Account? <a href="/users/register">Register</a>
+        </p>
+      </div>
+    </div>
+  </div>
