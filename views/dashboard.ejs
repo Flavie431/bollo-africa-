@@ -1,18 +1,48 @@
 
 <h1 class="mt-4">Dashboard</h1>
-<div class="row">
-    <div class="col-6">
-        <p class="lead mb-3">Welcome <%= user.name %> </p>
-       <h1 <% if (user.role == 'freelancer'){ %>> done man</h1> <%} else {%> <h1>NO</h1> <%}%>
+<div class="container">
+    <div class="container">
+        <p class="lead">Welcome <%= user.name %> </p>
+        <% if (user.role == 'freelancer'){ %>
+           <button type="button" class="btn btn-primary center text-center" data-toggle="modal" data-target="#exampleModal">
+            <i class="fas fa-plus"></i> Create  a Gig
+      </button></h1> <%} else {%> 
     </div>
     <div class="lead">
-        <form action="/users/activate-frelancer" method="POST">
+        <form action="/users/activate-freelancer" method="POST">
             <input type="hidden" name="role" value="freelancer">
-            <button type="submit" class="btn btn-primary">
+            <button type="submit" class="btn btn-primary center text-center">
                 <i class="fas fa-star"></i> Become a Freelancer 
             </button>
         </form>
         
     </div>
+    <%}%>
+</div> <br>
+<a href="/users/logout" class="btn btn-secondarycenter text-center ">Logout</a>
 </div>
-<a href="/users/logout" class="btn btn-secondary">Logout</a>
+<hr>
+<br>
+<!-- Button trigger modal -->
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -92,11 +92,20 @@ router.get('/logout', (req, res) => {
   req.flash('success_msg', 'You are logged out');
   res.redirect('/users/login');
 });
+router.get('/ss/',(req,res)=>{
+  res.send("FICK")
+})
 
 // activate Freelnace
+
+router.get('/activate-freelancer', async (req,res)=>{
+res.send("Sexy")
+})
+
+
 // Update User
-router.post('/activate-freelancer',forwardAuthenticated,async (req,res)=>{
-  const {id} = req.user.id
+router.post('/activate-freelancer', async (req,res)=>{
+  const id = req.user.id
 
   try {
           const response = await User.findByIdAndUpdate(id,req.body)
