@@ -1,0 +1,26 @@
+<div class="container">
+  <br>  <h1 class="text-center">Browse All Gigs</h1>
+    <div class="row">
+        <div class="card-deck">
+<br>
+<% gigs.forEach(function(gig){%>
+    <a href="/gigs/<%= gig._id %>" class="card col-md-3">
+        <img class="card-img-top img-fluid" src="<%= gig.image_url %>" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title"><%= gig.title %></h5>
+          <small class=" small text-muted">Skills: </small>
+          <% gig.skills.forEach(function(skill){%>
+          <span class="badge badge-warning"><%= skill %></span>
+      <% })%>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">people ordered <%= gig.ordered_times %></small>
+          <small class="text-theme"><%= gig.amount%>FCFA</small> 
+        </div>
+      
+      </a>
+      <% })%>
+        </div>
+    </div>
+    </div>
+</div>
