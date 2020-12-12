@@ -287,3 +287,123 @@
         </div>
     </div>
 </div>
+
+
+<div class="container">
+    <h1> Welcome <%= user.name %></h1>
+    <hr>
+  <div class="row">
+    <div class="col">
+      <h6 class="lead">Balance</h6>
+      <h3 class="text-theme"> XAF 35,000.00</h3>
+    </div>
+  
+    <div class="col">
+      
+      <h3 class="text-theme"> 3</h3>
+      <h6 class="lead">Total Gigs</h6>
+  
+    </div>
+    <div class="col">
+      
+      <h3 class="text-warning"> 3</h3>
+      <h6 class="lead">In QueQue</h6>
+  
+    </div>
+    <div class="col">
+   <% if (user.role == 'freelancer') {%>
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    <i class="fas fa-plus-circle"> </i> Create  a Gig
+  </button>
+  <%} else { %>
+    <form action="/users/activate-freelancer" method="post">
+      <input type="hidden" name="role" value="freelancer">
+    <button type="submit" class="btn btn-primary"> <i class="fas fa-star"></i> Become a freelancer</button><% } %>
+  </form>
+    </div>
+    <hr>
+  </div><hr>
+  </div>
+  <br>
+  
+  
+  
+  
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Create Gig</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+  <form method="POST" action="/gigs/create">
+    <div class="form-row" >
+      <div class="form-group col-12">
+        <label for="title">Title </label>
+        <input type="text" name="title" class="form-control" id="title" placeholder="Enter a good title" required maxlength="150">
+      </div>
+      
+      <div class="form-group col-md-6">
+        <label for="amount">Amount in FCFA</label>
+        <input type="number" class="form-control"  name ="amount" id="amount" placeholder="0.00" required>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="skills">Select  Skills For Gig</label>
+        <select name="skills" id="skills" required multiple class="form-control">
+          <option value="Java Script">Java Script</option>
+          <option value="Data Analysis">Data Analysis</option>
+          <option value="SEO ">SEO</option>
+          <option value="Designer ">Designer</option>
+  
+        </select>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label for="image_url"> Enter Image URL</label>
+      <input type="text" name="image_url" class="form-control" id="image_url" placeholder="https://someimage.jpg" required>
+    </div>
+    <div class="form-group">
+      <label for="expectedDuration"> Expected Duration</label>
+      <select name="expectedDuration" id="expectedDuration" class="form-controrl" required>
+        <option value="1-5 hrs">1-5 hrs</option>
+        <option value="6-24 hrs">6-24 hrs</option>
+        <option value="1 day">1 day</option>
+        <option value="3 days">3 days</option>
+        <option value="4-5 days">4-5 days</option>
+        <option value="1 week">1 week</option>
+        <option value="2 weeks">2 weeks</option>
+        <option value="1 month">1 month</option>
+        <option value="1 month plus">1 month plu</option>
+  
+      </select>
+  
+    </div>
+    <div class="form-group">
+        <label class="label" for="description">
+          Description
+        </label>
+        <textarea name="description" id="description" cols="30" rows="10" class="form-control"></textarea>
+  
+    </div>
+  
+  
+  
+  
+        </div>
+        <div class="modal-footer">
+         <small>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+         </small> 
+          <button type="submit" class="btn btn-primary btn-block">Create Git</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
