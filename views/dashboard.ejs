@@ -1,7 +1,46 @@
 <link rel="stylesheet" href="https://allyoucan.cloud/cdn/icofont/1.0.1/icofont.css" integrity="sha384-jbCTJB16Q17718YM9U22iJkhuGbS0Gd2LjaWb4YJEZToOPmnKDjySVa323U+W7Fv" crossorigin="anonymous">
 <link rel="stylesheet" href="/css/dashboard.css">
 <div class="container">
-
+    <div class="container">
+        <h1> Welcome <%= user.name %></h1>
+        <hr>
+      <div class="row">
+        <div class="col">
+          <h6 class="lead">Balance</h6>
+          <h3 class="text-theme"> XAF 35,000.00</h3>
+        </div>
+      
+        <div class="col">
+          
+          <h3 class="text-theme"> 3</h3>
+          <h6 class="lead">Total Gigs</h6>
+      
+        </div>
+        <div class="col">
+          
+          <h3 class="text-warning"> 3</h3>
+          <h6 class="lead">In QueQue</h6>
+      
+        </div>
+        <div class="col">
+       <% if (user.role == 'freelancer') {%>
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        <i class="fas fa-plus-circle"> </i> Create  a Gig
+      </button>
+      <%} else { %>
+        <form action="/users/activate-freelancer" method="post">
+          <input type="hidden" name="role" value="freelancer">
+        <button type="submit" class="btn btn-primary"> <i class="fas fa-star"></i> Become a freelancer</button><% } %>
+      </form>
+        </div>
+        <hr>
+      </div><hr>
+      </div>
+      <br>
+      
+  
+      
 <div class="row">
   <div class="col-sm-4">
       <div class="card-box tilebox-one"><i class="icon-layers float-right text-muted"></i>
@@ -289,45 +328,7 @@
 </div>
 
 
-<div class="container">
-    <h1> Welcome <%= user.name %></h1>
-    <hr>
-  <div class="row">
-    <div class="col">
-      <h6 class="lead">Balance</h6>
-      <h3 class="text-theme"> XAF 35,000.00</h3>
-    </div>
-  
-    <div class="col">
-      
-      <h3 class="text-theme"> 3</h3>
-      <h6 class="lead">Total Gigs</h6>
-  
-    </div>
-    <div class="col">
-      
-      <h3 class="text-warning"> 3</h3>
-      <h6 class="lead">In QueQue</h6>
-  
-    </div>
-    <div class="col">
-   <% if (user.role == 'freelancer') {%>
-  <!-- Button trigger modal -->
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-    <i class="fas fa-plus-circle"> </i> Create  a Gig
-  </button>
-  <%} else { %>
-    <form action="/users/activate-freelancer" method="post">
-      <input type="hidden" name="role" value="freelancer">
-    <button type="submit" class="btn btn-primary"> <i class="fas fa-star"></i> Become a freelancer</button><% } %>
-  </form>
-    </div>
-    <hr>
-  </div><hr>
-  </div>
-  <br>
-  
-  
+
   
   
   

@@ -412,7 +412,7 @@ b, strong {
           <small class="text-muted">people ordered <%= gig.ordered_times %></small> 
                 <p> <a href="" class="btn btn-info"> <i class="fas fa-eye"></i> View <%= owner.name %>'s Profile</a><p></p>
             </div><!-- / project-info-box -->
-                <button class="btn btn-primary btn-success btn-block"> Buy this gig</button>
+                <button class="btn btn-primary btn-success btn-block" data-toggle="modal" data-target="#exampleModal"> Buy this gig</button>
         </div><!-- / column -->
 
         <div class="col-md-7">
@@ -427,3 +427,38 @@ b, strong {
         </div><!-- / column -->
     </div>
 </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Confirm Order</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+  <form method="POST" action="/contracts/create">
+    <div class="form-row" >
+      <input type="hidden" name="gig_id" value="<%= gig._id %>" class="form-control">
+    <div class="form-group col-12">
+        <label class="label" for="description">
+          Enter a Message
+        </label>
+        <textarea name="message" id="messafe" cols="30" rows="10" class="form-control" >Enter Order Message</textarea>
+  
+    </div>
+  
+  
+        </div>
+        <div class="modal-footer">
+         <small>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">back</button>
+         </small> 
+          <button type="submit" class="btn btn-primary btn-block">Confirm</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
