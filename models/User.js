@@ -8,6 +8,7 @@ const  {Schema, model} = require('mongoose');
     isActive: {type:Boolean, default:true},
     isVerified: {type:Boolean,  default:false},
     wallet_id: String,
+    purchases:{type: Array},
     phone: String,
     role: {type:String, required: true, default:"user"},
     registered: {type:Date, default:Date.now(),

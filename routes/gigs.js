@@ -5,6 +5,22 @@ const User = require('../models/User');
 const { forwardAuthenticated } = require('../config/auth');
 const Gig = require('../models/Gig');
 
+// get all gigs
+router.get('/', async (req, res) => {
+  try {
+      const gig = await Gig.find();
+      if (!gig) throw new Error('No gig found');
+      const sorted = gig.sort((a, b) => {
+          return new Date(a.date).getTime()- new Date(b.date).getTime();
+      });
+      res.render('gigs', { gigs:sorted });
+
+  }catch (error){
+      res.status(500).json({message: error.message})
+  }
+ 
+});
+
 router.get('/:id',async (req,res)=>{
     const {id} = req.params
 
@@ -13,46 +29,55 @@ router.get('/:id',async (req,res)=>{
             if(!gig) throw Error('Something went wrong')
              gig = { ... gig._doc, ... req.body}
              console.log(gig)
-        res.render('register', {
-            gig
-          });
+             const user = User.findOne({ _id: gig.owner }).then((user)=>{
+              
+              res.render('gig', {
+                gig,owner:user
+              });
+             })
+        
     }catch (error){
         res.status(500).json({message: error.message})
     }
 })
 
-// Register
+// create gig
 router.post('/create', (req, res) => {
   const { title,
   amount,
   skills,
   image_url,
   description,
-  expecteDuration}= req.body;
+  expectedDuration}= req.body;
   let errors = [];
 
-  if (!title || !amount || !skills || !image_url || !description || !expecteDuration ) {
+  if (!title || !amount || !skills || !image_url || !description || !expectedDuration ) {
     errors.push({ msg: 'Please enter all fields' });
   }
 
 
   if (errors.length > 0) {
-    res.render('register', {
+    
+    console.log(req.body)
+    res.render('login', {
       errors,
+      title,
       amount,
   skills,
   image_url,
   description,
-  expecteDuration
+  expectedDuration
     });
   } else {
-            owner = re.user;
+        owner = req.user
+        console.log({owner});
             const newGig = new Gig({
+              title,
                 amount,
                 skills,
                 image_url,
                 description,
-                expecteDuration,
+                expectedDuration,
                 owner
             });
 
@@ -61,7 +86,7 @@ router.post('/create', (req, res) => {
                 console.log({gig});
               req.flash(
                 'success_msg',
-                'You are now registered and can log in'
+                'GIG Created Successfully'
               );
               res.redirect('/dashboard');
             })

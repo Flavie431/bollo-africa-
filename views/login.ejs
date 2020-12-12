@@ -1,79 +1,71 @@
-<!-- <div class="container ">
-  <br><br><br>
+<style>
+  body {
+  background: #eee !important;
+}
 
-    <div class="col-6 m-auto form-signin">
-      <div class="">
-        <h1 class="text-center mb-3 form-signin-heading"><i class="fas fa-sign-in-alt"></i>  Login</h1>
-        <% include ('./partials/messages') %>
-        <form action="/users/login" method="POST" >
-          <br>
-          <br>
-          <div class="form-group">
-            <input
-              type="email"
-              id="email"
-              name="email"
-              class="input-block-level"
-              placeholder="Enter Email"
-            />
-          </div>
-          <br>
-          <div class="form-group">
-            <input
-              type="password"
-              id="password"
-              name="password"
-              class="input-block-level"
-              placeholder="Enter Password"
-            />
-            <br>
-          </div>
-          <button type="submit" class="btn btn-primary btn-block">Login</button>
-        </form>
-        <p class="lead mt-4">
-          No Account? <a href="/users/register">Register</a>
-        </p>
-      </div>
-    </div>
-  </div> -->
+.wrapper {
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
 
+.form-signin {
+  max-width: 380px;
+  padding: 15px 35px 45px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 30px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  font-size: 16px;
+  height: auto;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="text"] {
+  margin-bottom: -1px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 20px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
 
-  <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
-    <% include ('./partials/messages') %>
-    <title>Signin Template for Bootstrap</title>
+</style>
+    <br>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
+    <div class="wrapper">
 
-    <!-- Bootstrap core CSS -->
-    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+      <form class="form-signin" action="/users/login" method="POST">
+      <h1 class="text-center">Bol<span class="text-theme">lo.</h1>
 
-    <!-- Custom styles for this template -->
-    <link href="signin.css" rel="stylesheet">
-  </head>
-
-  <body class="text-center">
-    <form class="form-signin" action="/users/login" method="POST" >
-      <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-      <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-      <label for="inputEmail" class="sr-only">Email address</label>
-      <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address" required autofocus>
-      <label for="inputPassword" class="sr-only">Password</label>
-      <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
-      <div class="checkbox mb-3">
-        <label>
-          <input type="checkbox" value="remember-me"> Remember me
+        <h5 class="text-center">Please login</h5>
+        <input type="text" class="form-control" name="email" placeholder="Email Address" required="" autofocus="" />
+        <input type="password" class="form-control" name="password" placeholder="Password" required="" />
+        <label class="checkbox">
+          <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
         </label>
-      </div>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-      <br>
-      <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
-    </form>
-  </body>
-</html>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+        <br>
+        <hr>
+
+      <p class="mt-4">Don't Have An Account? <a href="/users/register">Register</a></p>
+
+    </div>
+    <br>
+    <p class="mt-5 mb-3 text-muted text-center">&copy; 2020</p>
+      </form>

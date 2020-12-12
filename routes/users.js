@@ -45,7 +45,6 @@ router.post('/register', (req, res) => {
           errors,
           name,
           email,
-          phone,
           password,
           password2
         });
@@ -98,20 +97,15 @@ router.get('/ss/',(req,res)=>{
 
 // activate Freelnace
 
-router.get('/activate-freelancer', async (req,res)=>{
-res.send("Sexy")
-})
-
 
 // Update User
 router.post('/activate-freelancer', async (req,res)=>{
-  const id = req.user.id
-
   try {
+    const id = req.user.id
           const response = await User.findByIdAndUpdate(id,req.body)
           if(!response) throw Error('Something went wrong')
           const updated = { ... response._doc, ... req.body}
-          req.flash('success_msg', 'Activate to freelancer');
+          req.flash('success_msg', 'Yay! You are now a freelancer');
           res.redirect('/dashboard');
   }catch (error){
       res.status(500).json({message: error.message})

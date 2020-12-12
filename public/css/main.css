@@ -1,102 +1,230 @@
-body {
-    padding-top: 20px;
-    padding-bottom: 60px;
-  }
-
-  /* Custom container */
-  .container {
-    margin: 0 auto;
-    max-width: 1000px;
-  }
-  .container > hr {
-    margin: 60px 0;
-  }
-
-  /* Main marketing message and sign up button */
-  .jumbotron {
-    margin: 80px 0;
-    text-align: center;
-  }
-  .jumbotron h1 {
-    font-size: 100px;
-    line-height: 1;
-  }
-  .jumbotron .lead {
-    font-size: 24px;
-    line-height: 1.25;
-  }
-  .jumbotron .btn {
-    font-size: 21px;
-    padding: 14px 24px;
-  }
-
-  /* Supporting marketing content */
-  .marketing {
-    margin: 60px 0;
-  }
-  .marketing p + h4 {
-    margin-top: 28px;
-  }
 
 
-  /* Customize the navbar links to be fill the entire space of the .navbar */
-  .navbar .navbar-inner {
-    padding: 0;
-  }
-  .navbar .nav {
-    margin: 0;
-    display: table;
-    width: 100%;
-  }
-  .navbar .nav li {
-    display: table-cell;
-    width: 1%;
-    float: none;
-  }
-  .navbar .nav li a {
-    font-weight: bold;
-    text-align: center;
-    border-left: 1px solid rgba(255,255,255,.75);
-    border-right: 1px solid rgba(0,0,0,.1);
-  }
-  .navbar .nav li:first-child a {
-    border-left: 0;
-    border-radius: 3px 0 0 3px;
-  }
-  .navbar .nav li:last-child a {
-    border-right: 0;
-    border-radius: 0 3px 3px 0;
-  }
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap');
+*{
+  font-family: 'PT Sans', sans-serif;
+}
+
+.main-container{
+  position: relative;
+  display: block;
+}
+.background{
+  min-height: 90vh;
+  width: 100%;
+  background-attachment: fixed;
+  background-image: url("https://www.demoapus-wp1.com/workio/wp-content/uploads/2020/02/flat-lay-desk-6.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+}
+.overlay{
+  background-image: url("https://www.demoapus-wp1.com/workio/wp-content/uploads/2020/05/green-banner.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  opacity: 1;
+  transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+  min-height: 90vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+
+}
+.el-container{
+  min-height: 90vh;
+
+  max-width: 1170px;
+  display: -webkit-box;
+display: -ms-flexbox;
+display: flex;
+margin-right: auto;
+margin-left: auto;
+position: relative;
+}
+.heading-title{
+  font-size: 40px;
+text-transform: capitalize;
+line-height: 1.5em;
+margin: 0 0 25px 0;
+font-family: "Poppins",Arial,sans-serif;
+font-weight: 600;
+line-height: 1.4;
+color: #272f46;
+}
+.heading-text{
+  font-size: 20px;
+}
+.text-theme {
+  color: #11b719 !important;
+}
+.wrapper{
+  margin: 50 auto;
+ padding: 10px 50px;
+
+}
+
+.has-search .form-control {
+  padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 2.375rem;
+  height: 2.375rem;
+  line-height: 2.375rem;
+  text-align: center;
+  pointer-events: none;
+  color: #aaa;
+}
+.jumbo{
+  margin-top: 15vh;
+}
+.grey-ban{
+  background-color: #7b7f8b;
+  padding: 30px;
+  
+}
+.img-brand{
+  filter: grayscale(100%) !important; 
+}
+
+.img-brand:hoover{
+  filter: grayscale(0) !important; 
+}
+.heading-form ,.heading-form input{
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 300;
+}
+.heading-form  .btn-warning{
+  color: white !important;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 200;
 
 
-  body {
-    padding-top: 40px;
-    padding-bottom: 40px;
-    background-color: #f5f5f5;
-  }
 
-  .form-signin {
-    max-width: 300px;
-    padding: 19px 29px 29px;
-    margin: 0 auto 20px;
-    background-color: #fff;
-    border: 1px solid #e5e5e5;
-    -webkit-border-radius: 5px;
-       -moz-border-radius: 5px;
-            border-radius: 5px;
-    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
-       -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
-            box-shadow: 0 1px 2px rgba(0,0,0,.05);
-  }
-  .form-signin .form-signin-heading,
-  .form-signin .checkbox {
-    margin-bottom: 10px;
-  }
-  .form-signin input[type="text"],
-  .form-signin input[type="password"] {
-    font-size: 16px;
-    height: auto;
-    margin-bottom: 15px;
-    padding: 7px 9px;
-  }
+}
+.heading-form .fa::before{
+  padding: 20px;
+  font-size: 40px;
 
+}
+.hiw{
+  padding:30px;
+  margin: 30px auto
+}
+
+.nav.nav-pills {
+  padding: 10px 40px;
+  background: #000000;
+  border-radius:100px;
+  font-weight: 500;
+}
+.main-container .nav-pills .nav-link.active, .main-container .nav-pills .show > .nav-link {
+  background:#11b719;
+  padding: 10px 30px;
+  border-radius: 100px;
+  box-shadow:3px 0px 5px rgba(0, 0, 0, 0.4);
+}
+.main-container .nav-pills,.nav-link{
+  color: #ffffff;
+  padding: 10px 30px;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+.main-container .nav-link:hover{
+  color: #11b719;
+
+}
+.hiw-heading-text {
+  font-weight: 700;
+  font-size: 40px;
+}
+.hiw-heading{
+  padding-bottom: 40px;
+}
+.main-container #pills-tabContent{
+  padding: 30px;
+  margin-top: 30px;
+}
+.icons .fas{
+  padding:20px;
+  background:#11b7193f;
+  border-radius: 50%;
+  color: #11b719;
+  margin:10px;
+}
+.icon .fas{
+  font-weight: 400!important;
+}
+.hiw-crad-heading{
+  font-size: 25px;
+  font-weight: 400;
+  color: #000000;
+}
+.split{
+  overflow: hidden;
+}
+
+.split .dark-side{
+  overflow: hidden;
+
+  background-color: 
+  #000000;
+  padding: 50px;
+min-height: 50vh;
+  color: white;
+}
+
+.split .green-side{
+  overflow: hidden;
+
+  background-color: #11b719;
+  padding: 50px;
+  min-height: 30vh;
+
+  color: white;
+}
+.green-side .btn-secondary{
+  background-color: white;
+  border-radius: 30px;
+  color: #11b719;
+  border: none;
+  padding:5px 20px;
+}
+.dark-side .btn-secondary{
+  border-radius: 30px;
+  background-color: white!important;
+  color: #000000;
+  border: none;
+  padding:5px 20px;
+
+
+}
+.split .heading{
+  margin:auto 30px;
+  font-weight: 800;
+  font-size: 45px;
+
+}
+.split p{
+  margin: auto 30px;
+  padding: 30px 50px;
+  font-size: 17px;
+}
+.split .col-6{
+  padding:60px
+}
+a.card{
+  padding:0px;
+  margin:10px;
+}
+a.card:hover{
+  text-decoration: none;
+}
